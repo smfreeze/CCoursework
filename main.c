@@ -52,6 +52,10 @@ int main(int argc, char **argv) {
 
   reverse(str);
 
+  if (str[0] == '\n'){
+    memmove(str,str+1,fileSize);
+  }
+
   if (fputs(str, fpwrite) == EOF) {
     printf("Error writing to file\n");
     fprintf(stderr, "error %d: %s\n", errno, strerror(errno));
@@ -60,6 +64,8 @@ int main(int argc, char **argv) {
 
   fclose(fpread);
   fclose(fpwrite);
+ 
+  free(str);
 
   return 0;
 }
