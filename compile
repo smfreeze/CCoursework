@@ -1,0 +1,4 @@
+gcc -I./ -c functions.c -o functions.o
+gcc -I./ -c msString.c -o msString.o
+gcc -I./ -c main.c -o main.o
+gcc main.o functions.o msString.o -o coursework
